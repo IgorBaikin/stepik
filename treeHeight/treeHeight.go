@@ -12,9 +12,7 @@ func TreeHeight(n int, nums []int) int {
 	for len(quenue) > 0 {
 		l := len(quenue)
 		for i := 0; i < l; i++ {
-			if value, ok := m[quenue[i]]; ok {
-				quenue = append(quenue, value...)
-			}
+			quenue = append(quenue, m[quenue[i]]...)
 		}
 
 		res++
@@ -22,5 +20,4 @@ func TreeHeight(n int, nums []int) int {
 	}
 
 	return res
-
 }
